@@ -84,7 +84,7 @@ create table product
 
 # 购物车模块
 存储方式：Redis。Redis以key为手机号，value为Cart_info对象。
-## 商品类别表设计
+## 购物车字段设计
 ```
 # 定义User_info对象， Redis里的用户信息类:
 class User_info:
