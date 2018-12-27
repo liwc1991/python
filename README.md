@@ -29,9 +29,9 @@ create table user
 #### 输入参数
 <table>
   <tr>
-    <th width=40%>参数</th>
-    <th width=10%>是否必须</th>
-    <th width=50%>说明</th>
+    <th>参数</th>
+    <th>是否必须</th>
+    <th>说明</th>
   </tr>
   <tr>
     <td>phone_num</td>
@@ -43,8 +43,8 @@ create table user
 #### 输出参数
 <table>
   <tr>
-    <th width=50%>参数</th>
-    <th width=50%>说明</th>
+    <th>参数</th>
+    <th>说明</th>
   </tr>
   <tr>
     <td>phone_num</td>
