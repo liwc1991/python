@@ -182,7 +182,77 @@ create table product
 ### 2.3.2获取产品接口
 /product_category/product
 根据输入的商品种类id返回该类别下的所有商品。
+#### 2.3.2.1输入参数
+<table>
+  <tr>
+    <th>节点</th>
+    <th>节点路径</th>
+    <th>节点类型</th>
+    <th>后台类型</th>
+    <th>是否必须</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>category_id</td>
+    <td>category_id</td>
+    <td>NUMBER</td>
+    <td>Integer</td>
+    <td>是</td>
+    <td>商品类id</td>
+  </tr>
+</table>
 
+#### 2.3.2.2输出参数
+<table>
+  <tr>
+    <th>节点</th>
+    <th>节点路径</th>
+    <th>节点类型</th>
+    <th>后台类型</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>product</td>
+    <td>product</td>
+    <td>Object</td>
+    <td>List&lt;Product&gt;</td>
+    <td>商品列表</td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>product.id</td>
+    <td>Number</td>
+    <td>Integer</td>
+    <td>商品类id</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>product.name</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>商品名称</td>
+  </tr>
+  <tr>
+    <td>price</td>
+    <td>product.price</td>
+    <td>Number</td>
+    <td>Decimal</td>
+    <td>商品类id</td>
+  </tr>
+  <tr>
+    <td>picture</td>
+    <td>product.picture</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>商品图片地址</td>
+  </tr>
+  <tr>
+    <td>stock</td>
+    <td>product.stock</td>
+    <td>Number</td>
+    <td>Integer</td>
+    <td>商品库存</td>
+  </tr>
 
 
 
