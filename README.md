@@ -134,43 +134,36 @@ create table product
     <th>说明</th>
   </tr>
   <tr>
-    <td>data</td>
-    <td>data</td>
+    <td>catagory</td>
+    <td>catagory</td>
     <td>Object</td>
     <td>List&lt;Product_category&gt;</td>
     <td>商品类列表</td>
   </tr>
   <tr>
-    <td>catagory</td>
-    <td>data.catagory</td>
-    <td>Object</td>
-    <td>Product_category</td>
-    <td>商品类</td>
-  </tr>
-  <tr>
     <td>id</td>
-    <td>data.catagory.id</td>
+    <td>catagory.id</td>
     <td>NUMBER</td>
     <td>Integer</td>
     <td>商品类id</td>
   </tr>
   <tr>
     <td>name</td>
-    <td>data.catagory.name</td>
+    <td>catagory.name</td>
     <td>STRING</td>
     <td>String</td>
     <td>商品类名称</td>
   </tr>
   <tr>
     <td>category_order</td>
-    <td>data.catagory.category_order</td>
+    <td>catagory.category_order</td>
     <td>STRING</td>
     <td>String</td>
     <td>商品类顺序</td>
   </tr>
   <tr>
     <td>children</td>
-    <td>data.catagory.children</td>
+    <td>catagory.children</td>
     <td>Object</td>
     <td>List&lt;Product_category&gt;</td>
     <td>商品类的子类</td>
