@@ -144,7 +144,7 @@ create table product
     <td>catagory</td>
     <td>data.catagory</td>
     <td>Object</td>
-    <td>List<</td>
+    <td>Product_category</td>
     <td>商品类</td>
   </tr>
   <tr>
@@ -160,6 +160,20 @@ create table product
     <td>STRING</td>
     <td>String</td>
     <td>商品类名称</td>
+  </tr>
+  <tr>
+    <td>category_order</td>
+    <td>data.catagory.category_order</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>商品类顺序</td>
+  </tr>
+  <tr>
+    <td>children</td>
+    <td>data.catagory.children</td>
+    <td>Object</td>
+    <td>List<Product_category></td>
+    <td>商品类的子类</td>
   </tr>
 </table>
 
