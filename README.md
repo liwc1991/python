@@ -112,6 +112,51 @@ create table product
 /product_category/category
 查询所有商品种类并返回。
 
+#### 2.3.1.1输入参数
+<table>
+  <tr>
+    <th>节点</th>
+    <th>节点路径</th>
+    <th>节点类型</th>
+    <th>后台类型</th>
+    <th>是否必须</th>
+    <th>说明</th>
+  </tr>
+</table>
+
+#### 2.3.1.2输出参数
+<table>
+  <tr>
+    <th>节点</th>
+    <th>节点路径</th>
+    <th>节点类型</th>
+    <th>后台类型</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>catagory</td>
+    <td>catagory</td>
+    <td>Object</td>
+    <td>Product_category</td>
+    <td>商品类</td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>catagory.id</td>
+    <td>NUMBER</td>
+    <td>Integer</td>
+    <td>商品类id</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>catagory.name</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>商品类名称</td>
+  </tr>
+</table>
+
+
 
 ### 2.3.2获取产品接口
 /product_category/product
