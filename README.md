@@ -190,6 +190,13 @@ create table product
     <td>商品子类顺序</td>
   </tr>
   <tr>
+    <td>children</td>
+    <td>catagory.children.children</td>
+    <td>Object</td>
+    <td>List&lt;Product_category&gt;</td>
+    <td>商品子类的子类列表</td>
+  </tr>
+  <tr>
     <td>......</td>
     <td>......</td>
     <td>......</td>
