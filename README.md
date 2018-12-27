@@ -3,8 +3,10 @@ python项目
 
 
 # 1.用户模块
-存储方式：Mysql+Redis。用户基本数据存储在Mysql，手机验证码存储在Redis。
-## 1.1用户表设计
+## 1.1存储设计
+### 1.1.1存储方式
+Mysql+Redis。用户基本数据存储在Mysql，手机验证码存储在Redis。
+### 1.1.2用户表设计
 ```
 create table user
 (
@@ -19,6 +21,8 @@ create table user
   user_name varchar(20)                   -- 用户名
 );
 ```
+### 1.1.3用户验证码字段设计
+用户验证码字段存储在Redis里。key为手机号+"_phone_code"，value为手机验证码，超时时间为60s。
 
 ## 1.2业务流程
 
