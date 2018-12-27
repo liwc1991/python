@@ -304,12 +304,18 @@ class Cart_info:
 #### 3.2.1.1输入参数
 <table>
   <tr>
-    <th>参数</th>
+    <th>节点</th>
+    <th>节点路径</th>
+    <th>节点类型</th>
+    <th>后台类型</th>
     <th>是否必须</th>
     <th>说明</th>
   </tr>
   <tr>
     <td>phone_num</td>
+    <td>phone_num</td>
+    <td>STRING</td>
+    <td>String</td>
     <td>是</td>
     <td>手机号</td>
   </tr>
@@ -318,20 +324,46 @@ class Cart_info:
 #### 1.3.1.2输出参数
 <table>
   <tr>
-    <th>参数</th>
+    <th>节点</th>
+    <th>节点路径</th>
+    <th>节点类型</th>
+    <th>后台类型</th>
     <th>说明</th>
   </tr>
   <tr>
-    <td>phone_num</td>
-    <td>手机号</td>
+    <td>product</td>
+    <td>product</td>
+    <td>Object</td>
+    <td>List&lt;Product&gt;</td>
+    <td>商品列表</td>
   </tr>
   <tr>
-    <td>error_code</td>
-    <td>错误码</td>
+    <td>id</td>
+    <td>product.id</td>
+    <td>Number</td>
+    <td>Integer</td>
+    <td>商品类id</td>
   </tr>
   <tr>
-    <td>error_message</td>
-    <td>错误信息</td>
+    <td>name</td>
+    <td>product.name</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>商品名称</td>
+  </tr>
+  <tr>
+    <td>price</td>
+    <td>product.price</td>
+    <td>Number</td>
+    <td>Decimal</td>
+    <td>商品类价格</td>
+  </tr>
+  <tr>
+    <td>buyCount</td>
+    <td>product.buyCount</td>
+    <td>Number</td>
+    <td>Integer</td>
+    <td>商品购买数</td>
   </tr>
 </table>
 
