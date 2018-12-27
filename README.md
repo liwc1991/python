@@ -134,22 +134,29 @@ create table product
     <th>说明</th>
   </tr>
   <tr>
-    <td>catagory</td>
-    <td>catagory</td>
+    <td>data</td>
+    <td>data</td>
     <td>Object</td>
-    <td>Product_category</td>
+    <td>List<Product_category></td>
+    <td>商品类列表</td>
+  </tr>
+  <tr>
+    <td>catagory</td>
+    <td>data.catagory</td>
+    <td>Object</td>
+    <td>List<</td>
     <td>商品类</td>
   </tr>
   <tr>
     <td>id</td>
-    <td>catagory.id</td>
+    <td>data.catagory.id</td>
     <td>NUMBER</td>
     <td>Integer</td>
     <td>商品类id</td>
   </tr>
   <tr>
     <td>name</td>
-    <td>catagory.name</td>
+    <td>data.catagory.name</td>
     <td>STRING</td>
     <td>String</td>
     <td>商品类名称</td>
