@@ -73,8 +73,10 @@ create table user
 根据输入注册用户。
 
 # 2.商品模块
-存储方式：Mysql。
-## 2.1商品类别表设计
+## 2.1存储设计
+### 2.1.1存储方式
+Mysql。
+### 2.1.2商品类别表设计
 ```
 create table product_category
 (
@@ -119,15 +121,11 @@ create table product
 
 
 # 3.购物车模块
-存储方式：Redis。Redis以key为手机号，value为Cart_info对象。
-## 3.1购物车字段设计
+## 3.1存储设计
+### 3.1.1存储方式
+Redis。key为手机号+"_cart_info"，value为Cart_info对象。
+### 3.1.2购物车字段设计
 ```
-# 定义User_info对象， Redis里的用户信息类:
-class User_info:
-    def __init__(self, phone_code, cart_info):
-        self.phone_code = phone_code     # 登录注册时使用的验证码
-        self.cart_info = cart_info       # 购物车信息
-
 # 定义Cart_info对象，Redis里的购物车类:
 class Cart_info:
     def __init__(self, product_list, amount):
@@ -139,7 +137,74 @@ class Cart_info:
 ### 3.2.1获取购物车
 /cart/cart
 根据输入的手机号返回该用户的购物车里的商品。
+#### 3.2.1.1输入参数
+<table>
+  <tr>
+    <th>参数</th>
+    <th>是否必须</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>phone_num</td>
+    <td>是</td>
+    <td>手机号</td>
+  </tr>
+</table>
 
-### 3.2.1往购物车增加商品
+#### 1.3.1.2输出参数
+<table>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>phone_num</td>
+    <td>手机号</td>
+  </tr>
+  <tr>
+    <td>error_code</td>
+    <td>错误码</td>
+  </tr>
+  <tr>
+    <td>error_message</td>
+    <td>错误信息</td>
+  </tr>
+</table>
+
+### 3.2.2往购物车增加商品
 /cart/add_to_cart
 根据输入的手机号往该用户的购物车里增加商品。
+
+#### 3.2.2.1输入参数
+<table>
+  <tr>
+    <th>参数</th>
+    <th>是否必须</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>phone_num</td>
+    <td>是</td>
+    <td>手机号</td>
+  </tr>
+</table>
+
+#### 3.2.2.2输出参数
+<table>
+  <tr>
+    <th>参数</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>phone_num</td>
+    <td>手机号</td>
+  </tr>
+  <tr>
+    <td>error_code</td>
+    <td>错误码</td>
+  </tr>
+  <tr>
+    <td>error_message</td>
+    <td>错误信息</td>
+  </tr>
+</table>
