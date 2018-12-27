@@ -207,7 +207,7 @@ create table product
 
 
 
-### 2.3.2获取产品接口
+### 2.3.2获取商品接口
 /product_category/product
 根据输入的商品种类id返回该类别下的所有商品。
 #### 2.3.2.1输入参数
@@ -342,33 +342,52 @@ class Cart_info:
 #### 3.2.2.1输入参数
 <table>
   <tr>
-    <th>参数</th>
+    <th>节点</th>
+    <th>节点路径</th>
+    <th>节点类型</th>
+    <th>后台类型</th>
     <th>是否必须</th>
     <th>说明</th>
   </tr>
   <tr>
     <td>phone_num</td>
+    <td>phone_num</td>
+    <td>STRING</td>
+    <td>String</td>
     <td>是</td>
     <td>手机号</td>
+  </tr>
+  <tr>
+    <td>product_id</td>
+    <td>product_id</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>是</td>
+    <td>商品id</td>
   </tr>
 </table>
 
 #### 3.2.2.2输出参数
 <table>
   <tr>
-    <th>参数</th>
+    <th>节点</th>
+    <th>节点路径</th>
+    <th>节点类型</th>
+    <th>后台类型</th>
     <th>说明</th>
   </tr>
   <tr>
-    <td>phone_num</td>
-    <td>手机号</td>
-  </tr>
-  <tr>
     <td>error_code</td>
+    <td>error_code</td>
+    <td>STRING</td>
+    <td>String</td>
     <td>错误码</td>
   </tr>
   <tr>
     <td>error_message</td>
+    <td>error_message</td>
+    <td>STRING</td>
+    <td>String</td>
     <td>错误信息</td>
   </tr>
 </table>
