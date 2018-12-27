@@ -2,9 +2,9 @@
 python项目
 
 
-# 用户模块
+# 1.用户模块
 存储方式：Mysql+Redis。用户基本数据存储在Mysql，手机验证码存储在Redis。
-## 用户表设计
+## 1.1用户表设计
 ```
 create table user
 (
@@ -20,13 +20,13 @@ create table user
 );
 ```
 
-## 业务流程
+## 1.2业务流程
 
-## 接口
-### 获取验证码接口
+## 1.3接口
+### 1.3.1获取验证码接口
 /register/phone_num
 为输入的手机号生成验证码。
-#### 输入参数
+#### 1.3.1.1输入参数
 <table>
   <tr>
     <th>参数</th>
@@ -40,7 +40,7 @@ create table user
   </tr>
 </table>
 
-#### 输出参数
+#### 1.3.1.2输出参数
 <table>
   <tr>
     <th>参数</th>
@@ -60,17 +60,17 @@ create table user
   </tr>
 </table>
 
-### 验证验证码接口
+### 1.3.2验证验证码接口
 /validate/phone_num
 验证app输入的验证码是否和服务器保存的验证码一致。
 
-### 注册接口
+### 1.3.3注册接口
 /register/user
 根据输入注册用户。
 
-# 商品模块
+# 2.商品模块
 存储方式：Mysql。
-## 商品类别表设计
+## 2.1商品类别表设计
 ```
 create table product_category
 (
@@ -83,7 +83,7 @@ create table product_category
 );
 ```
 
-## 商品表设计
+## 2.2商品表设计
 ```
 create table product
 (
@@ -101,22 +101,22 @@ create table product
 );
 ```
 
-## 接口
-### 获取商品种类接口
+## 2.3接口
+### 2.3.1获取商品种类接口
 /product_category/category
 查询所有商品种类并返回。
 
 
-### 获取产品接口
+### 2.3.2获取产品接口
 /product_category/product
 根据输入的商品种类id返回该类别下的所有商品。
 
 
 
 
-# 购物车模块
+# 3.购物车模块
 存储方式：Redis。Redis以key为手机号，value为Cart_info对象。
-## 购物车字段设计
+## 3.1购物车字段设计
 ```
 # 定义User_info对象， Redis里的用户信息类:
 class User_info:
@@ -131,11 +131,11 @@ class Cart_info:
         self.amount = amount            # 合计总金额
 ```
 
-## 接口
-### 获取购物车
+## 3.2接口
+### 3.2.1获取购物车
 /cart/cart
 根据输入的手机号返回该用户的购物车里的商品。
 
-### 往购物车增加商品
+### 3.2.1往购物车增加商品
 /cart/add_to_cart
 根据输入的手机号往该用户的购物车里增加商品。
