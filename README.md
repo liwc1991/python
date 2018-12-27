@@ -166,7 +166,35 @@ create table product
     <td>catagory.children</td>
     <td>Object</td>
     <td>List&lt;Product_category&gt;</td>
-    <td>商品类的子类</td>
+    <td>商品类的子类列表</td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>catagory.children.id</td>
+    <td>NUMBER</td>
+    <td>Integer</td>
+    <td>商品子类id</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>catagory.children.name</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>商品子类名称</td>
+  </tr>
+  <tr>
+    <td>category_order</td>
+    <td>catagory.children.category_order</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>商品子类顺序</td>
+  </tr>
+  <tr>
+    <td>......</td>
+    <td>......</td>
+    <td>......</td>
+    <td>......</td>
+    <td>......</td>
   </tr>
 </table>
 
@@ -230,7 +258,7 @@ create table product
     <td>product.price</td>
     <td>Number</td>
     <td>Decimal</td>
-    <td>商品类id</td>
+    <td>商品类价格</td>
   </tr>
   <tr>
     <td>picture</td>
