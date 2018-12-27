@@ -137,7 +137,7 @@ create table product
     <td>data</td>
     <td>data</td>
     <td>Object</td>
-    <td>List<Product++_++category></td>
+    <td>List\<Product++_++category\></td>
     <td>商品类列表</td>
   </tr>
   <tr>
@@ -163,7 +163,7 @@ create table product
   </tr>
   <tr>
     <td>category_order</td>
-    <td>data.catagory.category++_++order</td>
+    <td>data.catagory.category_order</td>
     <td>STRING</td>
     <td>String</td>
     <td>商品类顺序</td>
@@ -172,7 +172,7 @@ create table product
     <td>children</td>
     <td>data.catagory.children</td>
     <td>Object</td>
-    <td>List<Product++_++category></td>
+    <td>List\<Product_category\></td>
     <td>商品类的子类</td>
   </tr>
 </table>
