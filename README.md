@@ -253,7 +253,7 @@ create table product
     <td>Integer</td>
     <td>商品库存</td>
   </tr>
-
+</table>
 
 
 # 3.购物车模块
