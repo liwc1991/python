@@ -89,7 +89,7 @@ create table product_category
 );
 ```
 
-## 2.2商品表设计
+### 2.1.3商品表设计
 ```
 create table product
 (
@@ -106,7 +106,7 @@ create table product
   stock int                               -- 商品库存
 );
 ```
-
+## 2.2业务流程
 ## 2.3接口
 ### 2.3.1获取商品种类接口
 /product_category/category
