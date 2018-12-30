@@ -33,12 +33,18 @@ create table user
 #### 1.3.1.1输入参数
 <table>
   <tr>
-    <th>参数</th>
+    <th>节点</th>
+    <th>节点路径</th>
+    <th>节点类型</th>
+    <th>后台类型</th>
     <th>是否必须</th>
     <th>说明</th>
   </tr>
   <tr>
     <td>phone_num</td>
+    <td>phone_num</td>
+    <td>STRING</td>
+    <td>String</td>
     <td>是</td>
     <td>手机号</td>
   </tr>
@@ -47,30 +53,155 @@ create table user
 #### 1.3.1.2输出参数
 <table>
   <tr>
-    <th>参数</th>
+    <th>节点</th>
+    <th>节点路径</th>
+    <th>节点类型</th>
+    <th>后台类型</th>
     <th>说明</th>
   </tr>
   <tr>
-    <td>phone_num</td>
-    <td>手机号</td>
-  </tr>
-  <tr>
     <td>error_code</td>
+    <td>error_code</td>
+    <td>STRING</td>
+    <td>String</td>
     <td>错误码</td>
   </tr>
   <tr>
     <td>error_message</td>
+    <td>error_message</td>
+    <td>STRING</td>
+    <td>String</td>
     <td>错误信息</td>
   </tr>
 </table>
 
+
 ### 1.3.2验证验证码接口
 /validate/phone_num
 验证app输入的验证码是否和服务器保存的验证码一致。
+#### 1.3.2.1输入参数
+<table>
+  <tr>
+    <th>节点</th>
+    <th>节点路径</th>
+    <th>节点类型</th>
+    <th>后台类型</th>
+    <th>是否必须</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>phone_num</td>
+    <td>phone_num</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>是</td>
+    <td>手机号</td>
+  </tr>
+  <tr>
+    <td>phone_code</td>
+    <td>phone_code</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>是</td>
+    <td>验证码</td>
+  </tr>
+</table>
+
+#### 1.3.2.2输出参数
+<table>
+  <tr>
+    <th>节点</th>
+    <th>节点路径</th>
+    <th>节点类型</th>
+    <th>后台类型</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>error_code</td>
+    <td>error_code</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>错误码</td>
+  </tr>
+  <tr>
+    <td>error_message</td>
+    <td>error_message</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>错误信息</td>
+  </tr>
+</table>
 
 ### 1.3.3注册接口
 /register/user
 根据输入注册用户。
+#### 1.3.3.1输入参数
+<table>
+  <tr>
+    <th>节点</th>
+    <th>节点路径</th>
+    <th>节点类型</th>
+    <th>后台类型</th>
+    <th>是否必须</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>phone_num</td>
+    <td>phone_num</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>是</td>
+    <td>手机号</td>
+  </tr>
+  <tr>
+    <td>device_id</td>
+    <td>device_id</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>是</td>
+    <td>设备号</td>
+  </tr>
+  <tr>
+    <td>password</td>
+    <td>password</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>是</td>
+    <td>密码</td>
+  </tr>
+</table>
+
+#### 1.3.3.2输出参数
+<table>
+  <tr>
+    <th>节点</th>
+    <th>节点路径</th>
+    <th>节点类型</th>
+    <th>后台类型</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>error_code</td>
+    <td>error_code</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>错误码</td>
+  </tr>
+  <tr>
+    <td>error_message</td>
+    <td>error_message</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>错误信息</td>
+  </tr>
+  <tr>
+    <td>user_id</td>
+    <td>user_id</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>用户id</td>
+  </tr>
+</table>
 
 # 2.商品模块
 ## 2.1存储设计
