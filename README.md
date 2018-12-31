@@ -197,8 +197,8 @@ create table user
   <tr>
     <td>user_id</td>
     <td>user_id</td>
-    <td>STRING</td>
-    <td>String</td>
+    <td>NUMBER</td>
+    <td>Integer</td>
     <td>用户id</td>
   </tr>
 </table>
@@ -554,3 +554,144 @@ class Cart_info:
     <td>错误信息</td>
   </tr>
 </table>
+
+
+
+# 4.订单模块
+## 4.1存储设计
+### 4.1.1存储方式
+Mysql。
+### 4.1.2订单表设计
+```
+create table t_order
+(
+	id int auto_increment primary key,		-- 自增id  主键
+	user_id int,							-- 用户id
+	status tinyint,                         -- init:未审核,pass:已审核,send:已发货,sign:已签收,cancel:已取消,file:已归档
+	quantity int,							-- 商品总数量
+	amount decimal(6,2),                   -- 订单总金额
+	ptotal decimal(6,2),   				    -- 商品总金额
+	fee decimal(6,2)	                    -- 运费总金额
+)
+```
+
+### 4.1.3订单明细表设计
+```
+create table order_detail
+(
+	id int auto_increment primary key,      -- 自增id  主键      
+	order_id  int,                          -- 订单编号
+	product_id  int,                        -- 商品id
+	price decimal(6,2),						-- 价格
+	quantity int,							-- 数量
+	total decimal(6,2),						-- 总金额（数量*价格）
+	fee decimal(6,2),  		                -- 配送费
+	isComment char(1)                       -- 是否评价过                    
+)
+```
+## 4.2业务流程
+## 4.3接口
+### 4.3.1创建订单接口
+/order/pay
+根据用户的购物车的商品列表创建订单表和订单明细表。
+
+#### 4.3.1.1输入参数
+<table>
+  <tr>
+    <th>节点</th>
+    <th>节点路径</th>
+    <th>节点类型</th>
+    <th>后台类型</th>
+    <th>是否必须</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>user_id</td>
+    <td>user_id</td>
+    <td>NUMBER</td>
+    <td>Integer</td>
+    <td>用户id</td>
+  </tr>
+</table>
+
+#### 2.3.1.2输出参数
+<table>
+  <tr>
+    <th>节点</th>
+    <th>节点路径</th>
+    <th>节点类型</th>
+    <th>后台类型</th>
+    <th>说明</th>
+  </tr>
+  <tr>
+    <td>catagory</td>
+    <td>catagory</td>
+    <td>Object</td>
+    <td>List&lt;Product_category&gt;</td>
+    <td>商品类列表</td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>catagory.id</td>
+    <td>NUMBER</td>
+    <td>Integer</td>
+    <td>商品类id</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>catagory.name</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>商品类名称</td>
+  </tr>
+  <tr>
+    <td>category_order</td>
+    <td>catagory.category_order</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>商品类顺序</td>
+  </tr>
+  <tr>
+    <td>children</td>
+    <td>catagory.children</td>
+    <td>Object</td>
+    <td>List&lt;Product_category&gt;</td>
+    <td>商品类的子类列表</td>
+  </tr>
+  <tr>
+    <td>id</td>
+    <td>catagory.children.id</td>
+    <td>NUMBER</td>
+    <td>Integer</td>
+    <td>商品子类id</td>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td>catagory.children.name</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>商品子类名称</td>
+  </tr>
+  <tr>
+    <td>category_order</td>
+    <td>catagory.children.category_order</td>
+    <td>STRING</td>
+    <td>String</td>
+    <td>商品子类顺序</td>
+  </tr>
+  <tr>
+    <td>children</td>
+    <td>catagory.children.children</td>
+    <td>Object</td>
+    <td>List&lt;Product_category&gt;</td>
+    <td>商品子类的子类列表</td>
+  </tr>
+  <tr>
+    <td>......</td>
+    <td>......</td>
+    <td>......</td>
+    <td>......</td>
+    <td>......</td>
+  </tr>
+</table>
+
