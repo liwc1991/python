@@ -41,5 +41,14 @@ class User(db.Model):
 ```
 db.create_all()
 ```
+增删改查
+```
+admin = User('admin', 'admin@example.com')
+db.session.add(admin)
+db.session.commit()
+
+users = User.query.all()
+admin = User.query.filter_by(username='admin').first()
+```
 
 
