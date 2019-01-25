@@ -52,3 +52,6 @@ admin = User.query.filter_by(username='admin').first()
 ```
 
 
+# 访问redis的方法
+
+
